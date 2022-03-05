@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<catalogoLibro xmlns:xsi ="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="catalogolibros.xsd">
+
+  <libro categoria="autobiografia" enstock="false" revisor="">
+    <titulo></titulo>
+    <autor></autor>
+    <fecha>
+      <mes> 10</mes>
+      <anyo>1950</anyo>
+    </fecha>
+    <ISBN></ISBN>
+    <editor></editor>
+  </libro>
+</catalogoLibro>

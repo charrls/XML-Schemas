@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:element name="catalogoLibro">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" maxOccurs="unbounded" ref="libro"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="libro">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="titulo"/>
+                <xs:element maxOccurs="unbounded" ref="autor"/>
+                <xs:element name="fecha" minOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="mes" type="xs:string" minOccurs="1" maxOccurs="12"/>
+                            <xs:element name="anyo" type="xs:string" minOccurs="1" maxOccurs="2021"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element ref="ISBN"/>
+                <xs:element ref="editor"/>
+            </xs:sequence>
+            <xs:attribute name="categoria" use="required">
+                <xs:simpleType>
+                    <xs:restriction base="xs:token">
+                        <xs:enumeration value="autobiografia"/>
+                        <xs:enumeration value="noficcion"/>
+                        <xs:enumeration value="ficcion"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="enstock" default="false">
+                <xs:simpleType>
+                    <xs:restriction base="xs:token">
+                        <xs:enumeration value="true"/>
+                        <xs:enumeration value="false"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="revisor" default=""/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="titulo" type="xs:string"/>
+    <xs:element name="autor" type="xs:string"/>
+    <xs:element name="ISBN" type="xs:string"/>
+    <xs:element name="editor" type="xs:string"/>
+
+</xs:schema>
